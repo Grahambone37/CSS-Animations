@@ -24,7 +24,7 @@
 
 .transition-demo img:hover {
   filter: none;
-  transform: rotate(2880deg)
+  transform: rotate(2880deg) scale(1.25);
 }
 
 
@@ -38,7 +38,14 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
-
+  animation: sale-bar 10s ease-in 5s 1 forwards;
+  animation-delay: 10s;
 }
 
-sale-bar
+@keyframes sale-bar {
+  0% { background-color: palegreen; }
+  25% { background-color: salmon; }
+  50% { background-color: yellow; }
+  75% { background-color: red; width: 10%; border-radius: 0%; transform: scale(1) }
+  100% { background-color: maroon; width: 10%; border-radius: 100%; transform: scale(0); }
+}
